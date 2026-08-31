@@ -7,7 +7,7 @@
 # Laravel Webhooks
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jeffersongoncalves/laravel-webhooks.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-webhooks)
-[![Tests](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-webhooks/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/laravel-webhooks/actions/workflows/run-tests.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-webhooks/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/jeffersongoncalves/laravel-webhooks/actions/workflows/tests.yml)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/jeffersongoncalves/laravel-webhooks/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/jeffersongoncalves/laravel-webhooks/actions/workflows/fix-php-code-style-issues.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/jeffersongoncalves/laravel-webhooks.svg?style=flat-square)](https://packagist.org/packages/jeffersongoncalves/laravel-webhooks)
 [![License](https://img.shields.io/packagist/l/jeffersongoncalves/laravel-webhooks.svg?style=flat-square)](LICENSE.md)
