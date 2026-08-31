@@ -69,31 +69,32 @@ abstract class TestCase extends Orchestra
         ];
     }
 
+    /**
+     * Same order as WebhooksServiceProvider::hasMigrations(). SQLite doesn't
+     * enforce foreign keys at CREATE TABLE time, but MySQL/Postgres do, and
+     * alphabetical order breaks it here: "webhook_logs" sorts before
+     * "webhooks" it references ('_' < 's' in ASCII).
+     */
+    private const MIGRATION_ORDER = [
+        'create_webhooks_table',
+        'create_webhook_logs_table',
+    ];
+
     protected function defineDatabaseMigrations(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
-        $migrationPath = __DIR__.'/../database/migrations';
-        $files = glob($migrationPath.'/*.php.stub') ?: [];
+        $stubsPath = __DIR__.'/../database/migrations';
+        $tempPath = sys_get_temp_dir().'/laravel-webhooks-migrations';
 
-        foreach ($files as $file) {
-            $migrationFile = $migrationPath.'/'.basename($file, '.stub');
-
-            if (! file_exists($migrationFile)) {
-                copy($file, $migrationFile);
-            }
+        if (! is_dir($tempPath)) {
+            mkdir($tempPath, 0755, true);
         }
 
-        $this->loadMigrationsFrom($migrationPath);
+        foreach (self::MIGRATION_ORDER as $index => $name) {
+            copy($stubsPath.'/'.$name.'.php.stub', $tempPath.'/'.sprintf('%03d_%s.php', $index, $name));
+        }
 
-        $this->beforeApplicationDestroyed(function () use ($migrationPath, $files) {
-            foreach ($files as $file) {
-                $migrationFile = $migrationPath.'/'.basename($file, '.stub');
-
-                if (file_exists($migrationFile)) {
-                    unlink($migrationFile);
-                }
-            }
-        });
+        $this->loadMigrationsFrom($tempPath);
     }
 }
