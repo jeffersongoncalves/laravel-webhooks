@@ -236,7 +236,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Security
+## Security Vulnerabilities
 
 If you discover any security-related issues, please email gerson.simao.92@gmail.com instead of using the issue tracker.
 
