@@ -19,6 +19,10 @@ All notable changes to this project will be documented in this file.
 - Add git-cliff config
 - Run tests against sqlite, mysql, and postgres
 
+### Dependencies
+
+- **deps:** Bump actions/checkout in the actions-deps group
+
 ### Documentation
 
 - Standardize README section structure
