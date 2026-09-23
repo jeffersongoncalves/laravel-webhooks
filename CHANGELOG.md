@@ -13,6 +13,8 @@ All notable changes to this project will be documented in this file.
 
 ### CI/CD
 
+- Standardize dependabot config
+- Standardize tests workflow
 - Generate CHANGELOG with git-cliff on push
 - Add git-cliff config
 - Run tests against sqlite, mysql, and postgres
