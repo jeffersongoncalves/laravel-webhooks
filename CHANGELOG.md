@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file.
 
 ### Documentation
 
+- Update banner to portfolio design
 - Standardize README section structure
 - Add Buy Me a Coffee sponsor link
 
