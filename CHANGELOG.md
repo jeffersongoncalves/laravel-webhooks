@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ### CI/CD
 
+- Retry the CHANGELOG push with rebase
 - Standardize tests workflow
 - Standardize dependabot config
 - Standardize tests workflow
