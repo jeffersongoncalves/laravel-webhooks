@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 ### CI/CD
 
+- Standardize tests workflow
 - Standardize dependabot config
 - Standardize tests workflow
 - Generate CHANGELOG with git-cliff on push
