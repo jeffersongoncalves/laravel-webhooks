@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### CI/CD
+
+- Auto-merge dependabot github-actions minor/patch
+
+## [1.0.1] - 2026-09-23
+
 ### Bug Fixes
 
 - Restore FK-safe migration order for webhook_logs
