@@ -6,7 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### CI/CD
 
+- Let the Pint workflow push its fixes
 - Auto-merge dependabot github-actions minor/patch
+
+### Dependencies
+
+- **deps:** Bump orhun/git-cliff-action in the actions-deps group (#13)
 
 ## [1.0.1] - 2026-09-23
 
