@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Other
+
+- Auto-assign issues and pull requests
+
+## [1.0.2] - 2026-10-28
+
 ### CI/CD
 
 - Let the Pint workflow push its fixes
