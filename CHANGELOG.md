@@ -11,7 +11,12 @@ All notable changes to this project will be documented in this file.
 
 ### Dependencies
 
+- **deps:** Bump shivammathur/setup-php (#15)
 - **deps:** Bump orhun/git-cliff-action in the actions-deps group (#13)
+
+### Testing
+
+- Load package migrations with pest-plugin-database-migrations
 
 ## [1.0.1] - 2026-09-23
 
