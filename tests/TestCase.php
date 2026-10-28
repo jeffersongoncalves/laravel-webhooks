@@ -4,12 +4,14 @@ namespace JeffersonGoncalves\Webhooks\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use JeffersonGoncalves\PestPluginDatabaseMigrations\LoadsPackageMigrations;
 use JeffersonGoncalves\Webhooks\WebhooksServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Spatie\WebhookServer\WebhookServerServiceProvider;
 
 abstract class TestCase extends Orchestra
 {
+    use LoadsPackageMigrations;
     use RefreshDatabase;
 
     protected function setUp(): void
@@ -69,32 +71,9 @@ abstract class TestCase extends Orchestra
         ];
     }
 
-    /**
-     * Same order as WebhooksServiceProvider::hasMigrations(). SQLite doesn't
-     * enforce foreign keys at CREATE TABLE time, but MySQL/Postgres do, and
-     * alphabetical order breaks it here: "webhook_logs" sorts before
-     * "webhooks" it references ('_' < 's' in ASCII).
-     */
-    private const MIGRATION_ORDER = [
-        'create_webhooks_table',
-        'create_webhook_logs_table',
-    ];
-
     protected function defineDatabaseMigrations(): void
     {
         $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-
-        $stubsPath = __DIR__.'/../database/migrations';
-        $tempPath = sys_get_temp_dir().'/laravel-webhooks-migrations';
-
-        if (! is_dir($tempPath)) {
-            mkdir($tempPath, 0755, true);
-        }
-
-        foreach (self::MIGRATION_ORDER as $index => $name) {
-            copy($stubsPath.'/'.$name.'.php.stub', $tempPath.'/'.sprintf('%03d_%s.php', $index, $name));
-        }
-
-        $this->loadMigrationsFrom($tempPath);
+        $this->loadPackageMigrations(WebhooksServiceProvider::class);
     }
 }
