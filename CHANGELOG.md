@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### CI/CD
+
+- Auto-merge dependabot github-actions minor/patch (#19)
+
+### Dependencies
+
+- **deps:** Bump stefanzweifel/git-auto-commit-action (#18)
+
 ### Other
 
 - Auto-assign issues and pull requests
